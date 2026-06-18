@@ -1,0 +1,78 @@
+# =========================
+# Sanskar-Word-Editor .gitignore
+# =========================
+
+# --- 1. Operating System Files ---
+.DS_Store
+Thumbs.db
+*.log
+
+# --- 2. Environment Variables & Secrets ---
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+*.pem
+
+# --- 3. Node.js / React / Web / Electron ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+out/
+.next/
+.nuxt/
+release/
+
+# --- 4. React Native / Mobile Apps ---
+.expo/
+android/app/build/
+android/.gradle/
+android/local.properties
+ios/build/
+ios/Pods/
+*.apk
+*.aab
+*.ipa
+
+# --- 5. Rust (Tauri / Backend) ---
+target/
+**/*.rs.bk
+
+# --- 6. C / C++ ---
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.out
+*.app
+
+# --- 7. C# (.NET) ---
+bin/
+obj/
+*.user
+*.suo
+.vs/
+
+# --- 8. Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.pytest_cache/
+
+# --- 9. Java / Kotlin ---
+*.class
+*.jar
+*.war
+
+# --- 10. IDE & Editor Folders ---
+.vscode/
+.idea/
+*.swp
