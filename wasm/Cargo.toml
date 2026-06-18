@@ -1,0 +1,19 @@
+[package]
+name = "sanskar_core"
+version = "1.0.0"
+edition = "2021"
+description = "Rust/WASM performance core for Sanskar-Word-Editor: fast document text analysis."
+license = "MIT"
+authors = ["Sanskar Yadav <sanskaryadavfrom2012to2026@gmail.com>"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+serde = { version = "1", features = ["derive"] }
+serde-wasm-bindgen = "0.6"
+
+[profile.release]
+opt-level = "s"
+lto = true

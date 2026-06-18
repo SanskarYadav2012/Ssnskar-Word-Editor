@@ -1,0 +1,104 @@
+{
+  "name": "sanskar-word-editor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sanskar-Word-Editor — a premium, cross-platform word processing application built with React, TypeScript, Electron, Capacitor and a Rust/WASM performance core.",
+  "author": "Sanskar Yadav <sanskaryadavfrom2012to2026@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "homepage": "./",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:web": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
+    "typecheck": "tsc -b --noEmit",
+    "wasm:build": "bash wasm/build.sh",
+    "electron:dev": "concurrently -k \"cross-env BROWSER=none vite\" \"wait-on tcp:5173 && cross-env ELECTRON_DEV=1 electron .\"",
+    "electron:build": "npm run build:web && electron-builder",
+    "electron:build:win": "npm run build:web && electron-builder --win",
+    "electron:build:mac": "npm run build:web && electron-builder --mac",
+    "electron:build:linux": "npm run build:web && electron-builder --linux",
+    "cap:sync": "npm run build:web && cap sync",
+    "cap:add:android": "cap add android",
+    "android:build": "npm run build:web && cap sync android && cd android && ./gradlew assembleDebug",
+    "android:build:release": "npm run build:web && cap sync android && cd android && ./gradlew assembleRelease"
+  },
+  "dependencies": {
+    "fflate": "0.8.2",
+    "file-saver": "2.0.5",
+    "html2canvas": "1.4.1",
+    "jspdf": "2.5.2",
+    "lucide-react": "0.460.0",
+    "mammoth": "1.8.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@capacitor/android": "6.2.0",
+    "@capacitor/cli": "6.2.0",
+    "@capacitor/core": "6.2.0",
+    "@types/file-saver": "2.0.7",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@typescript-eslint/eslint-plugin": "7.18.0",
+    "@typescript-eslint/parser": "7.18.0",
+    "@vitejs/plugin-react": "4.3.4",
+    "autoprefixer": "10.4.20",
+    "concurrently": "9.1.0",
+    "cross-env": "7.0.3",
+    "electron": "33.2.1",
+    "electron-builder": "25.1.8",
+    "eslint": "8.57.1",
+    "eslint-plugin-react-hooks": "4.6.2",
+    "eslint-plugin-react-refresh": "0.4.14",
+    "postcss": "8.4.49",
+    "tailwindcss": "3.4.17",
+    "typescript": "5.6.3",
+    "vite": "5.4.11",
+    "wait-on": "8.0.1"
+  },
+  "build": {
+    "appId": "com.sanskar.wordeditor",
+    "productName": "Sanskar-Word-Editor",
+    "copyright": "© 2026 Copyright Sanskar. All rights reserved.",
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "public/logo.png"
+    ],
+    "directories": {
+      "buildResources": "build",
+      "output": "release"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.productivity",
+      "icon": "build/icon.png"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Office",
+      "icon": "build/icon.png"
+    }
+  }
+}
