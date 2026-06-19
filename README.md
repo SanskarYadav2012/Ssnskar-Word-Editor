@@ -189,9 +189,9 @@ Once built, `src/core/wasmLoader.ts` picks it up automatically on the next run; 
 
 ## 📬 Follow Sanskar
 
-- **GitHub:** https://www.github.com/SanskarYadav2012
+- **GitHub:** https://www.github.com/Sanskar-in
 - **X (Twitter):** https://www.x.com/Sanskar1729
-- **LinkedIn:** https://www.linkedin.com/in/sanskar-yadav-99628b3b1/
+- **LinkedIn:** https://www.linkedin.com/in/sanskar-yadav-in/
 - **Call:** +91 9935768461
 - **Gmail:** sanskaryadavfrom2012to2026@gmail.com
 - **Support:** supportramsandesh@gmail.com
